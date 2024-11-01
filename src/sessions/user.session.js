@@ -15,6 +15,15 @@ export const removeUser = async (socket) => {
   }
 };
 
+export const getUserBySocket = (socket) => {
+  const user = userSessions.find((user) => user.socket === socket);
+  if (!user) {
+    // TODO
+    console.error('User not found: getUserBySocket');
+  }
+  return user;
+};
+
 export const getAllUser = () => {
   return userSessions;
 };
